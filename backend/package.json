@@ -4,11 +4,21 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=warehouse-api nodemon ./bin/www",
+    "test": "NODE_ENV=test jest"
   },
   "dependencies": {
+    "@prisma/client": "^6.13.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "prisma": "^6.13.0",
+    "zod": "^4.0.15"
+  },
+  "devDependencies": {
+    "dotenv": "^17.2.1",
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
   }
 }
