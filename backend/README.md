@@ -4,6 +4,8 @@ This app was extended to include a product management API as per requirements. I
 
 The API is built using Express.js and Prisma / SQlite, with Zod for input validation. It includes integration tests using Jest, Supertest and test instance of SQlite database to ensure the functionality of the product endpoints.
 
+Note: The app is designed to be run in a development environment with a SQLite database. It is not intended for production use without further modifications, e.g. switching to a more rubust database like PostgreSQL or MySQL. It would also require additional security measures, such as authentication and authorization, to be production-ready.
+
 ## Instructions
 
 1. Clone the repository.
