@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=warehouse-api nodemon ./bin/www",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest --runInBand"
   },
   "dependencies": {
     "@prisma/client": "^6.13.0",
