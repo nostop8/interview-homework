@@ -5,7 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('warehouse-api:server');
+var { name: appName } = require('../package.json');
+process.env.DEBUG = appName;
+var debug = require('debug')(appName);
 var http = require('http');
 
 /**
