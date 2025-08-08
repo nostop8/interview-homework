@@ -1,5 +1,6 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const cors = require("cors");
+const router = express.Router();
 
 const { responseErrorHandler } = require("../middlewares/response.middleware");
 const {
@@ -10,11 +11,13 @@ const {
   deleteProduct,
 } = require("../controllers/product.controller");
 
+router.use(cors());
+
 router.get("/", getAllProducts);
 router.post("/", createProduct);
 router.get("/:id", getProduct);
 router.put("/:id", updateProduct);
-router.delete('/:id', deleteProduct);
+router.delete("/:id", deleteProduct);
 
 router.use(responseErrorHandler);
 

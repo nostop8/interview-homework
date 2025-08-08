@@ -1,4 +1,4 @@
-const debug = require('../misc/debug');
+const debug = require("../misc/debug");
 const NotFoundError = require("../misc/not-found.error");
 const ValidationError = require("../misc/validation.error");
 
