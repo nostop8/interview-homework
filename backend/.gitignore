@@ -35,8 +35,12 @@ yarn-error.log
 /coverage
 /libpeerconnection.log
 testem.log
-/typings
+/typings    
 
 # System files
-.DS_Store
+.DS_Store   
 Thumbs.db
+
+/prisma/dev.db
+/prisma/test.db
+

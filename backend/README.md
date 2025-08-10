@@ -1,33 +1,21 @@
 # Express API for Warehouse app
 
-This folder serves as the scaffold of the application that is a part of the interview process for candidates attending on the position in CloudTalk.
+This app was extended to include a product management API as per requirements. It allows users to perform CRUD operations on products, which are defined by their ID, name, quantity, and unit price in euros.
 
-## Assignment
+The API is built using Express.js and Prisma / SQlite, with Zod for input validation. It includes integration tests using Jest, Supertest and test instance of SQlite database to ensure the functionality of the product endpoints.
 
-1. Warehouse application, needs API for following features
+Note: The app is designed to be run in a development environment with a SQLite database. It is not intended for production use without further modifications, e.g. switching to a more rubust database like PostgreSQL or MySQL. It would also require additional security measures, such as authentication and authorization, to be production-ready.
 
-   1. Table of products that are available
-   2. Product definition (required properties)
+## Instructions
 
-      1. ID
-      2. Name
-      3. Quantity
-      4. Unit price (euros)
-
-   3. Product manipulation
-
-      1. CRUD operations
-
-   4. Shipments (optional)
-
-2. Please at the development consider
-
-   1. Development best practises
-   2. Testing
-   3. Simulate a situation in which you work with the team (pay attention to how you work with Git)
-
-3. This is a bare minimum, there are no limits to creativity, just keep in mind what we wanted
-
-We wish you good luck and a clear mind! We are looking forward to seeing you!
-
-PS: We should be able to run application locally, thus start the backend and be able to use endpoints through the curl/postman.
+1. Clone the repository.
+2. Navigate to the `backend` directory.
+3. Install the dependencies using `npm install`.
+4. Set up the dev database by running `npx prisma db push`.
+   - This will create the necessary table in the SQLite database.
+   - The database file is located at `prisma/dev.db`.
+4. Start the application using `npm start` and query the API endpoints using Postman or curl.
+   - The application will run on `http://localhost:3000`.
+   - The product endpoints are available at `/products` URI.
+   - You can use the provided test database for testing.
+5. Run the tests using `npm test`, this will use the test database located at `prisma/test.db`.
