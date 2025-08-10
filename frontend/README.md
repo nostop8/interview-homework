@@ -1,42 +1,8 @@
 # Angular application for Warehouse
 
-This repository serves as the scaffold of the application that is a part of the interview process for candidates attending on the position in CloudTalk.
-
-## Assignment
-
-1. As a warehouse, we would like to have two main features
-
-   1. Warehouse status
-
-      1. Table of products that are available
-      2. Product definition (required properties)
-
-         1. ID
-         2. Name
-         3. Quantity
-         4. Unit price (euros)
-
-      3. Product manipulation
-
-         1. CRUD operations
-
-   2. Shipments (optional)
-
-2. The application should be prepared to use the REST API
-
-   1. In case of Fullstack position, the API should be implemented
-
-3. Please at the development consider
-
-   1. Best practices for the development of angular application
-   2. Testing
-   3. Simulate a situation in which you work with the team (pay attention to how you work with Git)
-
-4. This is a bare minimum, there are no limits to creativity, just keep in mind what we wanted
-
-We wish you good luck and a clear mind! We are looking forward to seeing you!
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+Based on the scaffold and the requirements, created an Angular application that allows users to manage products in a warehouse. The application provides a user interface for listing, adding, editing, and removing products.
+This app works with the backend API, for instructions to run it check corresponding [README](./backend/README.md).
+Current UI app is built as minimal as possible, in order to make it easier to review the code and focus on the required functionality. All the code is covered with the basic tests.
 
 ## Project informations
 
