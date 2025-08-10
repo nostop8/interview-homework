@@ -1,22 +1,37 @@
-<div class="items-list">
-    <ng-container *ngFor="let item of items$ | async">
-        <app-list-item
-            *ngIf="item.id !== editableItemId; else specialItemTemplate"
-            [item]="item"
-            (onRemoveItem)="deleteItem(item.id)"
-            (onEditItem)="editItem(item.id)"
-            (addToShipment)="addItemToShipment(item.id)"
-        ></app-list-item>
+<ng-container *ngIf="state$ | async as state">
+    <div class="loading message" *ngIf="state.loading">Loading... Please wait.</div>
+    <div class="error message" *ngIf="state.error">Failed to load items. Make sure the backend is running.</div>
+    <div class="items-list">
+        <ng-container *ngIf="state.items?.length; else emptyState">
+            <ng-container *ngFor="let item of state.items">
+                <app-list-item
+                    *ngIf="item.id !== editableItemId; else itemFormTemplate"
+                    [item]="item"
+                    (onRemoveItem)="deleteItem(item.id)"
+                    (onEditItem)="editItem(item.id)"
+                    (addToShipment)="addItemToShipment(item.id)"
+                ></app-list-item>
 
-        <ng-template #specialItemTemplate>
-            <app-item-form
-                [item]="item"
-                [editableItemId]="editableItemId"
-                (onItemSaved)="reload()"
-                (onCancel)="editableItemId = null"
-            ></app-item-form>
+                <ng-template #itemFormTemplate>
+                    <app-item-form
+                        [item]="item"
+                        [editableItemId]="editableItemId"
+                        (onItemSaved)="getItems()"
+                        (onCancel)="editableItemId = null"
+                    ></app-item-form>
+                </ng-template>
+            </ng-container>
+        </ng-container>
+
+        <ng-template #emptyState>
+            <div class="message" *ngIf="state.items">
+                No items found.
+                <br />
+                Add new product using the form below:
+            </div>
         </ng-template>
-    </ng-container>
-</div>
+    </div>
+</ng-container>
+
 <h2>Add Product</h2>
-<app-item-form (onItemAdded)="reload()"></app-item-form>
+<app-item-form (onItemAdded)="getItems()"></app-item-form>
