@@ -1,8 +1,11 @@
-export interface WarehouseItem {
-    imageUrl: string
-    id: number
-    name: string
-    description: string
-    quantity: number
-    unitPrice: number
+export interface WarehouseFormItem {
+    name: string;
+    quantity: number;
+    unitPrice: number;
+}
+
+export interface WarehouseItem extends WarehouseFormItem {
+    imageUrl: string;
+    id: number;
+    description: string;
 }

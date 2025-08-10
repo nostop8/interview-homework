@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+.button {
+  &.button-small {
+    min-width: auto;
+  }
+  &.button-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  &.button-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  &:disabled {
+    background-color: #ccc;
+  }
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px;
+  min-width: 120px;
+  max-height: 40px;
+}
+
+input[type="text"],input[type="number"] {
+  padding: 9px;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+}

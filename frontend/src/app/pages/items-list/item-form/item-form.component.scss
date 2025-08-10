@@ -1,0 +1,48 @@
+.product-form {
+    display: flex;
+    gap: 1rem;
+    padding: 10px;
+
+    &--name {
+        flex: 0.9;
+    }
+
+    &--quantity {
+        flex: 0.05;
+    }
+
+    &--unit-price {
+        flex: 0.05;
+    }
+    
+    .button {
+        align-self: flex-end; 
+    }
+
+    input[type="number"] {
+        max-width: 50px;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        padding-left: 10px;
+        position: relative;
+
+        span {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            color: red;
+            font-size: 0.9em;
+            padding-left: 10px;
+        }
+    }
+
+    input.ng-invalid.ng-touched {
+        border-color: red;
+    }
+
+}
